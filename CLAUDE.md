@@ -1,5 +1,33 @@
 @AGENTS.md
 
+## Ethnic Petal — Project Context
+
+**Store:** Ethnic Petal — Premium South Asian designer dresses for girls and women
+**Live URL:** https://ethnic-petal.vercel.app
+**GitHub:** https://github.com/favasptcr/ethnic-petal
+**Stack:** Next.js 16 (App Router) · Tailwind CSS v4 · TypeScript · Vercel
+
+### Pages
+- `/` — Homepage
+- `/collections/women` — Women's collection with filters
+- `/collections/girls` — Girls' collection with filters
+- `/products/[id]` — Product detail page
+- `/wishlist` — Wishlist page
+- `/checkout` — 3-step checkout
+- `/about` — About page
+
+### Key files
+- `lib/products.ts` — All product data (women IDs 1-12, girls IDs 101-110)
+- `lib/design-system.ts` — Design tokens (colors, typography, spacing)
+- `context/CartContext.tsx` — Cart state
+- `context/WishlistContext.tsx` — Wishlist state
+- `app/globals.css` — Global styles and utility classes
+
+### Design System
+- **Colors:** Cream bg `#FAF8F5`, gold `#C9A84C`, dark text `#1A1614`
+- **Fonts:** Inter (body) + Cormorant Garamond (display/headings)
+- **Utilities:** `.font-display`, `.gold-gradient`, `.btn-primary`, `.btn-outline`, `.glass`, `.grain`, `.skeleton`, `.animate-fade-up`
+
 <!-- VERCEL BEST PRACTICES START -->
 ## Best practices for developing on Vercel
 

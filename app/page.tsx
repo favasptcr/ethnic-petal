@@ -71,14 +71,14 @@ export default function HomePage() {
           <p className="text-xs tracking-[0.4em] uppercase text-[#c9a84c] mb-5">
             New Collection 2025
           </p>
-          <h1 className="font-display text-5xl sm:text-7xl font-bold leading-tight mb-6 max-w-3xl tracking-tight">
+          <h1 className="font-display text-5xl sm:text-7xl font-bold leading-tight mb-6 max-w-3xl tracking-tight animate-fade-up">
             Wear Your{" "}
             <span className="gold-gradient italic">Heritage</span>
           </h1>
-          <p className="text-sm sm:text-base text-white/60 mb-10 max-w-md leading-relaxed tracking-wide">
+          <p className="text-sm sm:text-base text-white/60 mb-10 max-w-md leading-relaxed tracking-wide animate-fade-up delay-100">
             Exquisite South Asian fashion crafted for the modern woman.
           </p>
-          <div className="relative inline-block">
+          <div className="relative inline-block animate-fade-up delay-200">
             {/* Glow ring */}
             <span className="absolute inset-0 rounded-none blur-md opacity-40"
               style={{ background: "linear-gradient(135deg, #c9a84c, #e8c97a)" }}
