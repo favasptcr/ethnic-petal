@@ -49,7 +49,7 @@ export default function ProductDetailPage() {
   ];
 
   function handleAddToBag() {
-    if (!selectedSize) return;
+    if (!selectedSize || !product) return;
     addItem({
       id: product.id,
       name: product.name,
@@ -63,6 +63,7 @@ export default function ProductDetailPage() {
   }
 
   function handleToggleWishlist() {
+    if (!product) return;
     toggleItem({
       id: product.id,
       name: product.name,
