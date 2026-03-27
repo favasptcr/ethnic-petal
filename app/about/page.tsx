@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export default function AboutPage() {
   return (
-    <main className="bg-[#080808]">
-      {/* ── Section 1: Hero ── */}
+    <main className="bg-[#FAF8F5]">
+      {/* ── Section 1: Hero — keep dark bg behind image ── */}
       <section className="relative w-full overflow-hidden flex items-center justify-center" style={{ height: "60vh" }}>
         {/* Background image */}
         <div className="absolute inset-0">
@@ -18,6 +18,9 @@ export default function AboutPage() {
           />
         </div>
 
+        {/* Dark base behind image */}
+        <div className="absolute inset-0 bg-[#1A1614]" style={{ zIndex: -1 }} />
+
         {/* Radial gold glow top-left */}
         <div
           className="absolute top-0 left-0 w-[500px] h-[500px] pointer-events-none"
@@ -27,7 +30,7 @@ export default function AboutPage() {
           }}
         />
 
-        {/* Hero text */}
+        {/* Hero text — white on dark image */}
         <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
           <p className="text-[11px] tracking-[0.3em] uppercase text-[#c9a84c] mb-4">
             Our Story
@@ -49,16 +52,16 @@ export default function AboutPage() {
             <p className="text-[11px] tracking-[0.3em] uppercase text-[#c9a84c] mb-4">
               About Us
             </p>
-            <h2 className="font-display text-4xl sm:text-5xl font-bold text-white mb-8 leading-tight">
+            <h2 className="font-display text-4xl sm:text-5xl font-bold text-[#1A1614] mb-8 leading-tight">
               Rooted in Culture.
             </h2>
-            <p className="text-white/70 leading-relaxed mb-5 text-base">
+            <p className="text-[#1A1614]/70 leading-relaxed mb-5 text-base">
               Ethnic Petal was founded with one simple belief — that the richness of
               South Asian fashion deserves a global stage. We curate and craft each
               piece to honor centuries-old artisan traditions while embracing the
               silhouettes and sensibilities of today&apos;s woman.
             </p>
-            <p className="text-white/70 leading-relaxed text-base">
+            <p className="text-[#1A1614]/70 leading-relaxed text-base">
               From the intricate threadwork of Lucknow to the mirror embroidery of
               Kutch, every garment tells a story. Our designers work directly with
               artisans across India and Pakistan to bring you pieces that are as
@@ -80,20 +83,20 @@ export default function AboutPage() {
       </section>
 
       {/* ── Section 3: Values ── */}
-      <section className="bg-[#0d0d0d] py-20">
+      <section className="bg-[#F2EDE6] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <p className="text-[11px] tracking-[0.3em] uppercase text-[#c9a84c] mb-4">
               What We Stand For
             </p>
-            <h2 className="font-display text-4xl sm:text-5xl font-bold text-white">
+            <h2 className="font-display text-4xl sm:text-5xl font-bold text-[#1A1614]">
               Our Values
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Card 1: Authenticity */}
-            <div className="glass p-8">
+            <div className="bg-white shadow-sm border border-[#D9D0C4] p-8">
               <div className="mb-5">
                 <svg
                   className="w-8 h-8 text-[#c9a84c]"
@@ -109,17 +112,17 @@ export default function AboutPage() {
                   />
                 </svg>
               </div>
-              <h3 className="font-display text-2xl font-bold text-white mb-3">
+              <h3 className="font-display text-2xl font-bold text-[#1A1614] mb-3">
                 Authentic Craftsmanship
               </h3>
-              <p className="text-white/60 leading-relaxed text-sm">
+              <p className="text-[#1A1614]/60 leading-relaxed text-sm">
                 Every piece is handcrafted by skilled artisans using traditional
                 techniques passed down through generations.
               </p>
             </div>
 
             {/* Card 2: Heart */}
-            <div className="glass p-8">
+            <div className="bg-white shadow-sm border border-[#D9D0C4] p-8">
               <div className="mb-5">
                 <svg
                   className="w-8 h-8 text-[#c9a84c]"
@@ -135,17 +138,17 @@ export default function AboutPage() {
                   />
                 </svg>
               </div>
-              <h3 className="font-display text-2xl font-bold text-white mb-3">
+              <h3 className="font-display text-2xl font-bold text-[#1A1614] mb-3">
                 Made with Love
               </h3>
-              <p className="text-white/60 leading-relaxed text-sm">
+              <p className="text-[#1A1614]/60 leading-relaxed text-sm">
                 We believe fashion should feel personal. That&apos;s why we offer custom
                 sizing and bespoke embroidery on select pieces.
               </p>
             </div>
 
             {/* Card 3: Leaf/Globe */}
-            <div className="glass p-8">
+            <div className="bg-white shadow-sm border border-[#D9D0C4] p-8">
               <div className="mb-5">
                 <svg
                   className="w-8 h-8 text-[#c9a84c]"
@@ -161,10 +164,10 @@ export default function AboutPage() {
                   />
                 </svg>
               </div>
-              <h3 className="font-display text-2xl font-bold text-white mb-3">
+              <h3 className="font-display text-2xl font-bold text-[#1A1614] mb-3">
                 Sustainable Sourcing
               </h3>
-              <p className="text-white/60 leading-relaxed text-sm">
+              <p className="text-[#1A1614]/60 leading-relaxed text-sm">
                 We work only with ethical suppliers and use eco-conscious fabrics
                 wherever possible, because beauty shouldn&apos;t cost the earth.
               </p>
@@ -173,8 +176,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Section 4: Stats ── */}
-      <section className="bg-[#080808] py-16 border-y border-[#2a2a2a]">
+      {/* ── Section 4: Stats — keep dark for contrast ── */}
+      <section className="bg-[#1A1614] py-16 border-y border-[#2a2018]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 text-center">
             <div>
@@ -206,13 +209,13 @@ export default function AboutPage() {
       </section>
 
       {/* ── Section 5: Team ── */}
-      <section className="bg-[#080808] py-20">
+      <section className="bg-[#FAF8F5] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <p className="text-[11px] tracking-[0.3em] uppercase text-[#c9a84c] mb-4">
               The Team
             </p>
-            <h2 className="font-display text-4xl sm:text-5xl font-bold text-white">
+            <h2 className="font-display text-4xl sm:text-5xl font-bold text-[#1A1614]">
               Meet the Makers
             </h2>
           </div>
@@ -229,7 +232,7 @@ export default function AboutPage() {
                   sizes="112px"
                 />
               </div>
-              <h3 className="font-display text-xl font-bold text-white mb-1">
+              <h3 className="font-display text-xl font-bold text-[#1A1614] mb-1">
                 Priya Sharma
               </h3>
               <p className="text-[#c9a84c] text-xs tracking-widest uppercase">
@@ -248,7 +251,7 @@ export default function AboutPage() {
                   sizes="112px"
                 />
               </div>
-              <h3 className="font-display text-xl font-bold text-white mb-1">
+              <h3 className="font-display text-xl font-bold text-[#1A1614] mb-1">
                 Aisha Khan
               </h3>
               <p className="text-[#c9a84c] text-xs tracking-widest uppercase">
@@ -267,7 +270,7 @@ export default function AboutPage() {
                   sizes="112px"
                 />
               </div>
-              <h3 className="font-display text-xl font-bold text-white mb-1">
+              <h3 className="font-display text-xl font-bold text-[#1A1614] mb-1">
                 Meera Patel
               </h3>
               <p className="text-[#c9a84c] text-xs tracking-widest uppercase">
@@ -279,7 +282,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── Section 6: CTA Banner ── */}
-      <section className="relative bg-[#080808] py-20 text-center overflow-hidden">
+      <section className="relative bg-[#F2EDE6] py-20 text-center overflow-hidden">
         {/* Gold radial glow */}
         <div
           className="absolute inset-0 pointer-events-none"
@@ -290,10 +293,10 @@ export default function AboutPage() {
         />
 
         <div className="relative z-10 max-w-2xl mx-auto px-6">
-          <h2 className="font-display text-4xl sm:text-5xl font-bold text-white mb-4">
+          <h2 className="font-display text-4xl sm:text-5xl font-bold text-[#1A1614] mb-4">
             Discover Your Perfect Piece
           </h2>
-          <p className="text-white/60 text-base leading-relaxed mb-10">
+          <p className="text-[#1A1614]/60 text-base leading-relaxed mb-10">
             Explore our curated collections of South Asian elegance — from timeless
             classics to modern statement pieces for every occasion.
           </p>

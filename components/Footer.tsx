@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#080808] border-t border-[#2a2a2a] mt-20">
+    <footer className="bg-[#1A1614] border-t border-[#1A1614] mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand */}
@@ -50,7 +50,7 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="Your email"
-                className="flex-1 bg-[#1a1a1a] border border-[#2a2a2a] px-3 py-2 text-sm text-white placeholder-[#888] focus:outline-none focus:border-[#c9a84c] transition-colors"
+                className="flex-1 bg-[#2a2018] border border-[#3a3028] px-3 py-2 text-sm text-white placeholder-[#888] focus:outline-none focus:border-[#c9a84c] transition-colors"
               />
               <button type="submit" className="btn-primary px-4 py-2">
                 JOIN

@@ -33,7 +33,7 @@ function SuccessScreen({
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#080808] flex items-center justify-center px-4">
+    <div className="min-h-screen bg-[#FAF8F5] flex items-center justify-center px-4">
       <style>{`
         @keyframes drawCircle {
           from { stroke-dashoffset: 283; }
@@ -89,16 +89,16 @@ function SuccessScreen({
           </svg>
         </div>
 
-        <h1 className="font-display text-4xl text-white mb-4 fade-in-1">
+        <h1 className="font-display text-4xl text-[#1A1614] mb-4 fade-in-1">
           Order Confirmed!
         </h1>
-        <p className="text-white/70 text-sm mb-2 fade-in-2">
+        <p className="text-[#1A1614]/70 text-sm mb-2 fade-in-2">
           Thank you, {firstName || "there"}! Your order has been placed.
         </p>
         <p className="text-[#c9a84c] text-xs tracking-widest uppercase mb-2 fade-in-3">
           Order #{orderNumber}
         </p>
-        <p className="text-[#888] text-xs mb-10 fade-in-3">
+        <p className="text-[#8A7E74] text-xs mb-10 fade-in-3">
           Estimated delivery: 5-7 business days
         </p>
 
@@ -157,8 +157,8 @@ export default function CheckoutPage() {
   }
 
   const inputClass =
-    "bg-[#111] border border-[#2a2a2a] text-white placeholder-[#555] px-4 py-3 w-full text-sm focus:outline-none focus:border-[#c9a84c] transition-colors";
-  const labelClass = "text-xs tracking-widest uppercase text-[#888] mb-1.5 block";
+    "bg-white border border-[#D9D0C4] text-[#1A1614] placeholder-[#8A7E74] px-4 py-3 w-full text-sm focus:outline-none focus:border-[#c9a84c] transition-colors";
+  const labelClass = "text-xs tracking-widest uppercase text-[#8A7E74] mb-1.5 block";
 
   const steps = [
     { num: 1, label: "Contact" },
@@ -167,7 +167,7 @@ export default function CheckoutPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#080808] text-white">
+    <div className="min-h-screen bg-[#FAF8F5] text-[#1A1614]">
       <div className="max-w-6xl mx-auto px-4 py-10 lg:py-16">
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
           {/* Left Column — Form */}
@@ -191,7 +191,7 @@ export default function CheckoutPage() {
                         ) : (
                           <span
                             className={`text-sm font-medium ${
-                              isActive ? "text-[#c9a84c]" : "text-[#555]"
+                              isActive ? "text-[#c9a84c]" : "text-[#8A7E74]"
                             }`}
                           >
                             {s.num}
@@ -199,7 +199,7 @@ export default function CheckoutPage() {
                         )}
                         <span
                           className={`text-sm ${
-                            isActive || isCompleted ? "text-[#c9a84c]" : "text-[#555]"
+                            isActive || isCompleted ? "text-[#c9a84c]" : "text-[#8A7E74]"
                           }`}
                         >
                           {s.label}
@@ -210,7 +210,7 @@ export default function CheckoutPage() {
                       )}
                     </div>
                     {i < steps.length - 1 && (
-                      <div className="flex-1 h-px bg-[#2a2a2a] mx-3" />
+                      <div className="flex-1 h-px bg-[#D9D0C4] mx-3" />
                     )}
                   </div>
                 );
@@ -220,7 +220,7 @@ export default function CheckoutPage() {
             {/* Step 1 — Contact Info */}
             {step === 1 && (
               <div>
-                <h2 className="font-display text-xl text-white mb-6">Contact Information</h2>
+                <h2 className="font-display text-xl text-[#1A1614] mb-6">Contact Information</h2>
                 <div className="space-y-4">
                   <div>
                     <label className={labelClass}>Email Address</label>
@@ -247,7 +247,7 @@ export default function CheckoutPage() {
                       />
                       <div
                         className={`w-4 h-4 border flex items-center justify-center transition-colors ${
-                          emailOffers ? "border-[#c9a84c] bg-[#c9a84c]" : "border-[#2a2a2a] bg-[#111]"
+                          emailOffers ? "border-[#c9a84c] bg-[#c9a84c]" : "border-[#D9D0C4] bg-white"
                         }`}
                       >
                         {emailOffers && (
@@ -257,7 +257,7 @@ export default function CheckoutPage() {
                         )}
                       </div>
                     </div>
-                    <span className="text-xs text-[#888]">Email me with news and offers</span>
+                    <span className="text-xs text-[#8A7E74]">Email me with news and offers</span>
                   </label>
                 </div>
 
@@ -273,7 +273,7 @@ export default function CheckoutPage() {
             {/* Step 2 — Shipping */}
             {step === 2 && (
               <div>
-                <h2 className="font-display text-xl text-white mb-6">Shipping Address</h2>
+                <h2 className="font-display text-xl text-[#1A1614] mb-6">Shipping Address</h2>
                 <div className="space-y-4">
                   <div className="grid grid-cols-2 gap-4">
                     <div>
@@ -388,15 +388,15 @@ export default function CheckoutPage() {
                             key={key}
                             className={`flex items-center justify-between px-4 py-3 border cursor-pointer transition-colors ${
                               isSelected
-                                ? "border-[#c9a84c] bg-[#111]"
-                                : "border-[#2a2a2a] bg-[#111] hover:border-[#555]"
+                                ? "border-[#c9a84c] bg-[#F2EDE6]"
+                                : "border-[#D9D0C4] bg-white hover:border-[#c9a84c]/50"
                             }`}
                           >
                             <div className="flex items-center gap-3">
                               {/* Custom radio */}
                               <div
                                 className={`w-4 h-4 rounded-full border-2 flex items-center justify-center transition-colors ${
-                                  isSelected ? "border-[#c9a84c]" : "border-[#555]"
+                                  isSelected ? "border-[#c9a84c]" : "border-[#D9D0C4]"
                                 }`}
                               >
                                 {isSelected && (
@@ -412,8 +412,8 @@ export default function CheckoutPage() {
                                 className="sr-only"
                               />
                               <div>
-                                <span className="text-sm text-white">{opt.label}</span>
-                                <span className="text-xs text-[#888] ml-2">{opt.days}</span>
+                                <span className="text-sm text-[#1A1614]">{opt.label}</span>
+                                <span className="text-xs text-[#8A7E74] ml-2">{opt.days}</span>
                               </div>
                             </div>
                             <span className="text-sm text-[#c9a84c]">
@@ -435,7 +435,7 @@ export default function CheckoutPage() {
                   </button>
                   <button
                     onClick={() => setStep(1)}
-                    className="text-xs text-[#888] tracking-widest uppercase hover:text-[#c9a84c] transition-colors py-2"
+                    className="text-xs text-[#8A7E74] tracking-widest uppercase hover:text-[#c9a84c] transition-colors py-2"
                   >
                     ← Back
                   </button>
@@ -451,7 +451,7 @@ export default function CheckoutPage() {
                     <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
                     <path d="M7 11V7a5 5 0 0 1 10 0v4" />
                   </svg>
-                  <h2 className="font-display text-xl text-white">Payment</h2>
+                  <h2 className="font-display text-xl text-[#1A1614]">Payment</h2>
                 </div>
 
                 <div className="space-y-4">
@@ -516,7 +516,7 @@ export default function CheckoutPage() {
                       />
                       <div
                         className={`w-4 h-4 border flex items-center justify-center transition-colors ${
-                          saveCard ? "border-[#c9a84c] bg-[#c9a84c]" : "border-[#2a2a2a] bg-[#111]"
+                          saveCard ? "border-[#c9a84c] bg-[#c9a84c]" : "border-[#D9D0C4] bg-white"
                         }`}
                       >
                         {saveCard && (
@@ -526,19 +526,19 @@ export default function CheckoutPage() {
                         )}
                       </div>
                     </div>
-                    <span className="text-xs text-[#888]">Save card for future purchases</span>
+                    <span className="text-xs text-[#8A7E74]">Save card for future purchases</span>
                   </label>
 
                   {/* OR divider */}
                   <div className="flex items-center gap-4 my-2">
-                    <div className="flex-1 h-px bg-[#2a2a2a]" />
-                    <span className="text-xs text-[#555] tracking-widest uppercase">or</span>
-                    <div className="flex-1 h-px bg-[#2a2a2a]" />
+                    <div className="flex-1 h-px bg-[#D9D0C4]" />
+                    <span className="text-xs text-[#8A7E74] tracking-widest uppercase">or</span>
+                    <div className="flex-1 h-px bg-[#D9D0C4]" />
                   </div>
 
                   {/* PayPal button */}
-                  <button className="w-full py-3 border border-[#c9a84c]/40 text-[#e8c97a] text-xs tracking-widest uppercase hover:bg-[#c9a84c]/10 hover:border-[#c9a84c] transition-colors flex items-center justify-center gap-2">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#e8c97a">
+                  <button className="w-full py-3 border border-[#c9a84c]/40 text-[#C9A84C] text-xs tracking-widest uppercase hover:bg-[#c9a84c]/10 hover:border-[#c9a84c] transition-colors flex items-center justify-center gap-2">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#C9A84C">
                       <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.59 3.025-2.566 4.643-5.813 4.643h-2.19c-.11 0-.198.079-.217.19L11.33 19.738a.371.371 0 0 0 .367.43h2.578c.46 0 .85-.334.922-.788l.038-.196.73-4.626.047-.254a.934.934 0 0 1 .921-.788h.58c3.758 0 6.7-1.526 7.558-5.944.358-1.845.17-3.388-.85-4.655z" />
                     </svg>
                     Pay with PayPal
@@ -554,7 +554,7 @@ export default function CheckoutPage() {
                   </button>
                   <button
                     onClick={() => setStep(2)}
-                    className="text-xs text-[#888] tracking-widest uppercase hover:text-[#c9a84c] transition-colors py-2"
+                    className="text-xs text-[#8A7E74] tracking-widest uppercase hover:text-[#c9a84c] transition-colors py-2"
                   >
                     ← Back
                   </button>
@@ -566,15 +566,15 @@ export default function CheckoutPage() {
           {/* Right Column — Order Summary */}
           <div className="lg:w-[40%]">
             <div className="lg:sticky lg:top-8">
-              <div className="bg-[#111] border border-[#2a2a2a] p-6">
-                <h2 className="font-display text-xl text-white mb-1">Order Summary</h2>
-                <p className="text-xs text-[#888] tracking-widest uppercase mb-6">
+              <div className="bg-[#F2EDE6] border border-[#D9D0C4] p-6">
+                <h2 className="font-display text-xl text-[#1A1614] mb-1">Order Summary</h2>
+                <p className="text-xs text-[#8A7E74] tracking-widest uppercase mb-6">
                   {count} {count === 1 ? "item" : "items"}
                 </p>
 
                 {items.length === 0 ? (
                   <div className="text-center py-10">
-                    <p className="text-sm text-[#555] mb-4">Your cart is empty</p>
+                    <p className="text-sm text-[#8A7E74] mb-4">Your cart is empty</p>
                     <Link
                       href="/collections/women"
                       className="text-xs text-[#c9a84c] tracking-widest uppercase underline underline-offset-4 hover:text-[#e8c97a] transition-colors"
@@ -586,7 +586,7 @@ export default function CheckoutPage() {
                   <ul className="space-y-5 mb-6">
                     {items.map((item) => (
                       <li key={`${item.id}-${item.size}`} className="flex gap-4">
-                        <div className="relative w-16 h-20 flex-shrink-0 bg-[#1a1a1a] overflow-hidden">
+                        <div className="relative w-16 h-20 flex-shrink-0 bg-[#EAE3D9] overflow-hidden">
                           <Image
                             src={item.image}
                             alt={item.name}
@@ -596,8 +596,8 @@ export default function CheckoutPage() {
                           />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <p className="text-sm text-white leading-snug">{item.name}</p>
-                          <p className="text-[11px] text-[#888] tracking-widest uppercase mt-0.5">
+                          <p className="text-sm text-[#1A1614] leading-snug">{item.name}</p>
+                          <p className="text-[11px] text-[#8A7E74] tracking-widest uppercase mt-0.5">
                             Size: {item.size} · Qty: {item.quantity}
                           </p>
                           <p className="text-sm text-[#c9a84c] mt-1 font-medium">
@@ -616,27 +616,27 @@ export default function CheckoutPage() {
                     placeholder="Promo code"
                     value={promo}
                     onChange={(e) => setPromo(e.target.value)}
-                    className="bg-[#111] border border-[#2a2a2a] text-white placeholder-[#555] px-4 py-2.5 flex-1 text-sm focus:outline-none focus:border-[#c9a84c] transition-colors"
+                    className="bg-white border border-[#D9D0C4] text-[#1A1614] placeholder-[#8A7E74] px-4 py-2.5 flex-1 text-sm focus:outline-none focus:border-[#c9a84c] transition-colors"
                   />
                   <button className="btn-outline px-4 py-2.5 text-xs">Apply</button>
                 </div>
 
-                <div className="border-t border-[#2a2a2a] pt-4 space-y-3">
+                <div className="border-t border-[#D9D0C4] pt-4 space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs tracking-widest uppercase text-[#888]">Subtotal</span>
-                    <span className="text-sm text-white">${total.toFixed(2)}</span>
+                    <span className="text-xs tracking-widest uppercase text-[#8A7E74]">Subtotal</span>
+                    <span className="text-sm text-[#1A1614]">${total.toFixed(2)}</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-xs tracking-widest uppercase text-[#888]">Shipping</span>
-                    <span className="text-sm text-white">
+                    <span className="text-xs tracking-widest uppercase text-[#8A7E74]">Shipping</span>
+                    <span className="text-sm text-[#1A1614]">
                       {shippingCost === 0 ? "Free" : `$${shippingCost.toFixed(2)}`}
                     </span>
                   </div>
                 </div>
 
-                <div className="border-t border-[#2a2a2a] mt-4 pt-4">
+                <div className="border-t border-[#D9D0C4] mt-4 pt-4">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm tracking-widest uppercase text-white font-medium">Total</span>
+                    <span className="text-sm tracking-widest uppercase text-[#1A1614] font-medium">Total</span>
                     <span className="text-xl font-bold text-[#c9a84c] font-display">
                       ${orderTotal.toFixed(2)}
                     </span>
@@ -644,12 +644,12 @@ export default function CheckoutPage() {
                 </div>
 
                 {/* Security badges */}
-                <div className="flex items-center justify-center gap-4 mt-6 pt-4 border-t border-[#2a2a2a]">
-                  <span className="text-[10px] text-[#555] tracking-wide">🔒 SSL Secure</span>
-                  <span className="text-[#2a2a2a]">·</span>
-                  <span className="text-[10px] text-[#555] tracking-wide">↩ 30-day Returns</span>
-                  <span className="text-[#2a2a2a]">·</span>
-                  <span className="text-[10px] text-[#555] tracking-wide">✦ Authentic</span>
+                <div className="flex items-center justify-center gap-4 mt-6 pt-4 border-t border-[#D9D0C4]">
+                  <span className="text-[10px] text-[#8A7E74] tracking-wide">🔒 SSL Secure</span>
+                  <span className="text-[#D9D0C4]">·</span>
+                  <span className="text-[10px] text-[#8A7E74] tracking-wide">↩ 30-day Returns</span>
+                  <span className="text-[#D9D0C4]">·</span>
+                  <span className="text-[10px] text-[#8A7E74] tracking-wide">✦ Authentic</span>
                 </div>
               </div>
             </div>

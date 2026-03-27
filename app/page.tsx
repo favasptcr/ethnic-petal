@@ -54,8 +54,8 @@ const trustBadges = [
 export default function HomePage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative h-[85vh] min-h-[500px] bg-[#080808] overflow-hidden">
+      {/* Hero — keep dark bg since it's behind an image */}
+      <section className="relative h-[85vh] min-h-[500px] bg-[#1A1614] overflow-hidden">
         {/* Radial gold glow */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-20 pointer-events-none"
           style={{ background: "radial-gradient(circle, #c9a84c 0%, transparent 70%)", transform: "translate(30%, -30%)" }}
@@ -94,17 +94,17 @@ export default function HomePage() {
       </section>
 
       {/* Category Tiles */}
-      <section className="bg-[#080808] py-20">
+      <section className="bg-[#FAF8F5] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <p className="text-xs tracking-[0.4em] uppercase text-[#c9a84c] mb-3">Browse By Style</p>
-            <h2 className="font-display text-3xl sm:text-4xl font-bold text-white">
+            <h2 className="font-display text-3xl sm:text-4xl font-bold text-[#1A1614]">
               Shop Categories
             </h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {categories.map((cat) => (
-              <Link key={cat.label} href={cat.href} className="group relative overflow-hidden aspect-[3/4] bg-[#111]">
+              <Link key={cat.label} href={cat.href} className="group relative overflow-hidden aspect-[3/4] bg-[#F2EDE6]">
                 <Image
                   src={cat.image}
                   alt={cat.label}
@@ -113,7 +113,7 @@ export default function HomePage() {
                   sizes="(max-width: 640px) 50vw, 25vw"
                 />
                 {/* glass overlay */}
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors" />
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/15 transition-colors" />
                 <div className="absolute inset-0 flex items-end p-5">
                   <div className="glass px-3 py-2 w-full">
                     <h3 className="font-display text-white font-bold text-lg tracking-wide">
@@ -129,18 +129,18 @@ export default function HomePage() {
       </section>
 
       {/* New Arrivals */}
-      <section className="bg-[#0d0d0d] py-20">
+      <section className="bg-[#F2EDE6] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-12">
             <div>
               <p className="text-xs tracking-[0.4em] uppercase text-[#c9a84c] mb-2">Just Dropped</p>
-              <h2 className="font-display text-3xl sm:text-4xl font-bold text-white">
+              <h2 className="font-display text-3xl sm:text-4xl font-bold text-[#1A1614]">
                 New Arrivals
               </h2>
             </div>
             <Link
               href="/collections/women"
-              className="text-xs tracking-widest uppercase text-[#888] hover:text-[#c9a84c] border-b border-[#2a2a2a] hover:border-[#c9a84c] transition-colors pb-0.5"
+              className="text-xs tracking-widest uppercase text-[#8A7E74] hover:text-[#c9a84c] border-b border-[#D9D0C4] hover:border-[#c9a84c] transition-colors pb-0.5"
             >
               View All
             </Link>
@@ -153,8 +153,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Sale Banner */}
-      <section className="relative h-72 bg-[#080808] overflow-hidden">
+      {/* Sale Banner — keep dark bg since it's behind an image */}
+      <section className="relative h-72 bg-[#1A1614] overflow-hidden">
         <Image
           src="https://images.unsplash.com/photo-1594938298603-376cf1d3de78?w=1400&q=80"
           alt="Sale Banner"
@@ -176,14 +176,14 @@ export default function HomePage() {
       </section>
 
       {/* Trust Badges */}
-      <section className="bg-[#080808] py-16">
+      <section className="bg-[#FAF8F5] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {trustBadges.map((item) => (
               <div key={item.title} className="flex flex-col items-center gap-3">
                 <div>{item.icon}</div>
-                <h4 className="text-sm font-semibold tracking-wide text-white">{item.title}</h4>
-                <p className="text-xs text-white/60">{item.desc}</p>
+                <h4 className="text-sm font-semibold tracking-wide text-[#1A1614]">{item.title}</h4>
+                <p className="text-xs text-[#1A1614]/60">{item.desc}</p>
               </div>
             ))}
           </div>

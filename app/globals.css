@@ -3,16 +3,16 @@
 :root {
   --gold: #c9a84c;
   --gold-light: #e8c97a;
-  --black: #080808;
-  --surface: #111111;
-  --surface2: #1a1a1a;
-  --border: #2a2a2a;
-  --text-muted: #888888;
+  --black: #FAF8F5;
+  --surface: #F2EDE6;
+  --surface2: #EAE3D9;
+  --border: #D9D0C4;
+  --text-muted: #8A7E74;
 }
 
 body {
-  background: #080808;
-  color: #f0f0f0;
+  background: #FAF8F5;
+  color: #1A1614;
   font-family: var(--font-inter), sans-serif;
 }
 
@@ -21,9 +21,9 @@ body {
 }
 
 .glass {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(0, 0, 0, 0.04);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .gold-gradient {
@@ -50,8 +50,8 @@ body {
 }
 
 .btn-outline {
-  border: 1px solid rgba(201, 168, 76, 0.4);
-  color: #e8c97a;
+  border: 1px solid rgba(201, 168, 76, 0.6);
+  color: #C9A84C;
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -77,5 +77,5 @@ body {
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: #c9a84c #111;
+  scrollbar-color: #c9a84c #F2EDE6;
 }

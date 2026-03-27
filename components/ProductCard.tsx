@@ -7,7 +7,7 @@ export default function ProductCard({ product }: { product: Product }) {
     <div className="product-card group">
       <Link href={`/products/${product.id}`} className="block">
         {/* Image */}
-        <div className="relative overflow-hidden bg-[#1a1a1a] aspect-[3/4]">
+        <div className="relative overflow-hidden bg-[#F2EDE6] aspect-[3/4]">
           <Image
             src={product.image}
             alt={product.name}
@@ -23,7 +23,7 @@ export default function ProductCard({ product }: { product: Product }) {
                 product.badge === "Sale"
                   ? "bg-red-700 text-white"
                   : product.badge === "New"
-                  ? "bg-white text-[#080808]"
+                  ? "bg-white text-[#1A1614]"
                   : "bg-[#c9a84c] text-[#080808]"
               }`}
             >
@@ -44,15 +44,15 @@ export default function ProductCard({ product }: { product: Product }) {
           <p className="text-[10px] tracking-widest uppercase text-[#c9a84c]/60 mb-1">
             {product.category}
           </p>
-          <h3 className="text-sm font-medium text-white leading-snug group-hover:text-[#c9a84c] transition-colors">
+          <h3 className="text-sm font-medium text-[#1A1614] leading-snug group-hover:text-[#c9a84c] transition-colors">
             {product.name}
           </h3>
           <div className="flex items-center gap-2 mt-1.5">
-            <span className="text-sm font-semibold text-white">
+            <span className="text-sm font-semibold text-[#1A1614]">
               ${product.price}
             </span>
             {product.originalPrice && (
-              <span className="text-xs text-[#888] line-through">
+              <span className="text-xs text-[#8A7E74] line-through">
                 ${product.originalPrice}
               </span>
             )}
@@ -64,7 +64,7 @@ export default function ProductCard({ product }: { product: Product }) {
               {product.colors.map((color) => (
                 <span
                   key={color}
-                  className="w-3.5 h-3.5 rounded-full border border-[#2a2a2a] cursor-pointer hover:ring-1 hover:ring-white/50 hover:ring-offset-1 hover:ring-offset-[#111] transition-all"
+                  className="w-3.5 h-3.5 rounded-full border border-[#D9D0C4] cursor-pointer hover:ring-1 hover:ring-[#1A1614]/50 hover:ring-offset-1 hover:ring-offset-white transition-all"
                   style={{ backgroundColor: color }}
                 />
               ))}

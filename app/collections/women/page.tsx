@@ -30,25 +30,25 @@ function CollectionsContent() {
   }, [activeCategory, sort]);
 
   return (
-    <div className="bg-[#080808] min-h-screen">
+    <div className="bg-[#FAF8F5] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         {/* Breadcrumb */}
-        <nav className="text-xs text-[#888] tracking-widest uppercase mb-6">
+        <nav className="text-xs text-[#8A7E74] tracking-widest uppercase mb-6">
           <span>Home</span>
           <span className="mx-2">/</span>
-          <span className="text-white/60">Women</span>
+          <span className="text-[#1A1614]/60">Women</span>
         </nav>
 
         {/* Page Title */}
         <div className="mb-10 text-center">
-          <h1 className="font-display text-4xl sm:text-5xl font-bold text-white">
+          <h1 className="font-display text-4xl sm:text-5xl font-bold text-[#1A1614]">
             Women&apos;s Collection
           </h1>
-          <p className="text-[#888] text-sm mt-3">{filtered.length} products</p>
+          <p className="text-[#8A7E74] text-sm mt-3">{filtered.length} products</p>
         </div>
 
         {/* Filters Row */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 border-b border-[#2a2a2a] pb-5">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 border-b border-[#D9D0C4] pb-5">
           {/* Category filters — desktop */}
           <div className="hidden sm:flex flex-wrap gap-2">
             {CATEGORIES.map((cat) => (
@@ -58,7 +58,7 @@ function CollectionsContent() {
                 className={`text-[11px] tracking-widest uppercase px-4 py-2 border transition-all ${
                   activeCategory === cat
                     ? "btn-primary border-transparent"
-                    : "bg-[#1a1a1a] border-[#2a2a2a] text-[#888] hover:border-[#c9a84c] hover:text-[#c9a84c]"
+                    : "bg-white border-[#D9D0C4] text-[#8A7E74] hover:border-[#c9a84c] hover:text-[#c9a84c]"
                 }`}
               >
                 {cat}
@@ -68,7 +68,7 @@ function CollectionsContent() {
 
           {/* Mobile filter toggle */}
           <button
-            className="sm:hidden text-xs tracking-widest uppercase border border-[#2a2a2a] bg-[#1a1a1a] text-[#888] px-4 py-2"
+            className="sm:hidden text-xs tracking-widest uppercase border border-[#D9D0C4] bg-white text-[#8A7E74] px-4 py-2"
             onClick={() => setMobileFilterOpen(!mobileFilterOpen)}
           >
             Filter by Category
@@ -78,7 +78,7 @@ function CollectionsContent() {
           <select
             value={sort}
             onChange={(e) => setSort(e.target.value)}
-            className="text-xs tracking-wide border border-[#2a2a2a] bg-[#1a1a1a] text-white px-3 py-2 focus:outline-none focus:border-[#c9a84c] cursor-pointer"
+            className="text-xs tracking-wide border border-[#D9D0C4] bg-white text-[#1A1614] px-3 py-2 focus:outline-none focus:border-[#c9a84c] cursor-pointer"
           >
             {SORT_OPTIONS.map((o) => (
               <option key={o.value} value={o.value}>
@@ -98,7 +98,7 @@ function CollectionsContent() {
                 className={`text-[11px] tracking-widest uppercase px-4 py-2 border transition-all ${
                   activeCategory === cat
                     ? "btn-primary border-transparent"
-                    : "bg-[#1a1a1a] border-[#2a2a2a] text-[#888]"
+                    : "bg-white border-[#D9D0C4] text-[#8A7E74]"
                 }`}
               >
                 {cat}
@@ -109,7 +109,7 @@ function CollectionsContent() {
 
         {/* Product Grid */}
         {filtered.length === 0 ? (
-          <div className="text-center py-20 text-[#888]">No products found.</div>
+          <div className="text-center py-20 text-[#8A7E74]">No products found.</div>
         ) : (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-5 gap-y-10">
             {filtered.map((product) => (
@@ -124,7 +124,7 @@ function CollectionsContent() {
 
 export default function WomenCollectionPage() {
   return (
-    <Suspense fallback={<div className="text-center py-20 text-[#888] bg-[#080808] min-h-screen">Loading...</div>}>
+    <Suspense fallback={<div className="text-center py-20 text-[#8A7E74] bg-[#FAF8F5] min-h-screen">Loading...</div>}>
       <CollectionsContent />
     </Suspense>
   );

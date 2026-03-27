@@ -28,8 +28,8 @@ export default function ProductDetailPage() {
 
   if (!product) {
     return (
-      <div className="min-h-[60vh] flex flex-col items-center justify-center gap-4 bg-[#080808]">
-        <p className="font-display text-xl text-white">Product not found</p>
+      <div className="min-h-[60vh] flex flex-col items-center justify-center gap-4 bg-[#FAF8F5]">
+        <p className="font-display text-xl text-[#1A1614]">Product not found</p>
         <Link
           href="/collections/women"
           className="text-xs tracking-widest uppercase text-[#c9a84c] underline underline-offset-4 hover:text-[#e8c97a] transition-colors"
@@ -101,22 +101,22 @@ export default function ProductDetailPage() {
     <>
       <SizeGuide open={sizeGuideOpen} onClose={() => setSizeGuideOpen(false)} />
 
-      <div className="bg-[#080808] min-h-screen">
+      <div className="bg-[#FAF8F5] min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           {/* Breadcrumb */}
-          <nav className="mb-8 flex items-center gap-2 text-[11px] tracking-widest uppercase text-[#888]">
+          <nav className="mb-8 flex items-center gap-2 text-[11px] tracking-widest uppercase text-[#8A7E74]">
             <Link href="/" className="hover:text-[#c9a84c] transition-colors">Home</Link>
             <span>/</span>
             <Link href="/collections/women" className="hover:text-[#c9a84c] transition-colors">Collections</Link>
             <span>/</span>
-            <span className="text-white/60">{product.name}</span>
+            <span className="text-[#1A1614]/60">{product.name}</span>
           </nav>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
             {/* LEFT — Images */}
             <div className="space-y-4">
               {/* Main Image */}
-              <div className="relative aspect-[3/4] overflow-hidden bg-[#111] w-full">
+              <div className="relative aspect-[3/4] overflow-hidden bg-[#F2EDE6] w-full">
                 <Image
                   src={mainImage}
                   alt={product.name}
@@ -131,7 +131,7 @@ export default function ProductDetailPage() {
                       product.badge === "Sale"
                         ? "bg-red-700 text-white"
                         : product.badge === "New"
-                        ? "bg-white text-[#080808]"
+                        ? "bg-white text-[#1A1614]"
                         : "bg-[#c9a84c] text-[#080808]"
                     }`}
                   >
@@ -146,10 +146,10 @@ export default function ProductDetailPage() {
                   <button
                     key={idx}
                     onClick={() => setMainImage(thumb)}
-                    className={`relative w-20 aspect-[3/4] overflow-hidden bg-[#111] flex-shrink-0 border-2 transition-colors ${
+                    className={`relative w-20 aspect-[3/4] overflow-hidden bg-[#F2EDE6] flex-shrink-0 border-2 transition-colors ${
                       mainImage === thumb
                         ? "border-[#c9a84c]"
-                        : "border-transparent hover:border-[#2a2a2a]"
+                        : "border-transparent hover:border-[#D9D0C4]"
                     }`}
                     aria-label={`View image ${idx + 1}`}
                   >
@@ -173,28 +173,28 @@ export default function ProductDetailPage() {
               </p>
 
               {/* Name */}
-              <h1 className="font-display text-3xl lg:text-4xl text-white leading-tight">
+              <h1 className="font-display text-3xl lg:text-4xl text-[#1A1614] leading-tight">
                 {product.name}
               </h1>
 
               {/* Price */}
               <div className="flex items-center gap-3">
-                <span className="font-display text-2xl font-semibold text-white">
+                <span className="font-display text-2xl font-semibold text-[#1A1614]">
                   ${product.price}
                 </span>
                 {product.originalPrice && (
-                  <span className="text-lg text-[#888] line-through">
+                  <span className="text-lg text-[#8A7E74] line-through">
                     ${product.originalPrice}
                   </span>
                 )}
               </div>
 
-              <hr className="border-[#2a2a2a]" />
+              <hr className="border-[#D9D0C4]" />
 
               {/* Color Swatches */}
               {product.colors && product.colors.length > 0 && (
                 <div>
-                  <p className="text-[11px] tracking-widest uppercase text-[#888] mb-2">Color</p>
+                  <p className="text-[11px] tracking-widest uppercase text-[#8A7E74] mb-2">Color</p>
                   <div className="flex gap-3">
                     {product.colors.map((color) => (
                       <button
@@ -203,8 +203,8 @@ export default function ProductDetailPage() {
                         aria-label={`Select color ${color}`}
                         className={`w-7 h-7 rounded-full border-2 transition-all ${
                           selectedColor === color
-                            ? "ring-2 ring-[#c9a84c] ring-offset-2 ring-offset-[#080808] border-[#c9a84c]"
-                            : "border-[#2a2a2a] hover:scale-110"
+                            ? "ring-2 ring-[#c9a84c] ring-offset-2 ring-offset-[#FAF8F5] border-[#c9a84c]"
+                            : "border-[#D9D0C4] hover:scale-110"
                         }`}
                         style={{ backgroundColor: color }}
                       />
@@ -216,7 +216,7 @@ export default function ProductDetailPage() {
               {/* Size Selector */}
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <p className="text-[11px] tracking-widest uppercase text-[#888]">Size</p>
+                  <p className="text-[11px] tracking-widest uppercase text-[#8A7E74]">Size</p>
                   <button
                     onClick={() => setSizeGuideOpen(true)}
                     className="text-[11px] tracking-widest uppercase text-[#c9a84c] underline underline-offset-2 hover:text-[#e8c97a] transition-colors"
@@ -232,7 +232,7 @@ export default function ProductDetailPage() {
                       className={`px-4 py-2 text-xs tracking-widest uppercase border transition-all ${
                         selectedSize === size
                           ? "btn-primary border-transparent"
-                          : "bg-[#1a1a1a] text-[#888] border-[#2a2a2a] hover:border-[#c9a84c] hover:text-white"
+                          : "bg-white text-[#8A7E74] border-[#D9D0C4] hover:border-[#c9a84c] hover:text-[#1A1614]"
                       }`}
                     >
                       {size}
@@ -240,7 +240,7 @@ export default function ProductDetailPage() {
                   ))}
                 </div>
                 {!selectedSize && (
-                  <p className="text-[11px] text-[#888] mt-1.5">Please select a size</p>
+                  <p className="text-[11px] text-[#8A7E74] mt-1.5">Please select a size</p>
                 )}
               </div>
 
@@ -254,7 +254,7 @@ export default function ProductDetailPage() {
                       ? addedToBag
                         ? "btn-primary opacity-90"
                         : "btn-primary"
-                      : "bg-[#1a1a1a] text-[#888] text-xs tracking-widest uppercase cursor-not-allowed"
+                      : "bg-[#EAE3D9] text-[#8A7E74] text-xs tracking-widest uppercase cursor-not-allowed"
                   }`}
                 >
                   {addedToBag ? "Added to Bag ✓" : "Add to Bag"}
@@ -268,14 +268,14 @@ export default function ProductDetailPage() {
               </div>
 
               {/* Accordion */}
-              <div className="border-t border-[#2a2a2a] mt-2">
+              <div className="border-t border-[#D9D0C4] mt-2">
                 {accordionSections.map((section) => (
-                  <div key={section.key} className="border-b border-[#2a2a2a]">
+                  <div key={section.key} className="border-b border-[#D9D0C4]">
                     <button
                       onClick={() => toggleAccordion(section.key)}
                       className="w-full flex items-center justify-between py-4 text-left"
                     >
-                      <span className="text-xs tracking-widest uppercase text-white">
+                      <span className="text-xs tracking-widest uppercase text-[#1A1614]">
                         {section.label}
                       </span>
                       <svg
@@ -291,7 +291,7 @@ export default function ProductDetailPage() {
                     </button>
                     {openAccordion === section.key && (
                       <div className="pb-4">
-                        <p className="text-sm text-[#888] leading-relaxed">{section.content}</p>
+                        <p className="text-sm text-[#8A7E74] leading-relaxed">{section.content}</p>
                       </div>
                     )}
                   </div>

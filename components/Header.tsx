@@ -26,13 +26,13 @@ export default function Header() {
 
   return (
     <>
-      {/* Announcement bar */}
-      <div className="bg-[#080808] border-b border-[#2a2a2a] text-center text-xs tracking-widest py-2 px-4">
+      {/* Announcement bar — keep dark for contrast */}
+      <div className="bg-[#1A1614] border-b border-[#1A1614] text-white text-center text-xs tracking-widest py-2 px-4">
         FREE SHIPPING ON ORDERS OVER $150 · USE CODE{" "}
         <span className="text-[#c9a84c]">PETAL10</span> FOR 10% OFF
       </div>
 
-      <header className="sticky top-0 z-50 bg-[#080808]/95 backdrop-blur-md border-b border-[#2a2a2a]">
+      <header className="sticky top-0 z-50 bg-[#FAF8F5]/95 backdrop-blur-md border-b border-[#D9D0C4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Mobile menu button */}
@@ -41,9 +41,9 @@ export default function Header() {
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"
             >
-              <span className="block w-6 h-0.5 bg-white mb-1.5" />
-              <span className="block w-6 h-0.5 bg-white mb-1.5" />
-              <span className="block w-6 h-0.5 bg-white" />
+              <span className="block w-6 h-0.5 bg-[#1A1614] mb-1.5" />
+              <span className="block w-6 h-0.5 bg-[#1A1614] mb-1.5" />
+              <span className="block w-6 h-0.5 bg-[#1A1614]" />
             </button>
 
             {/* Logo */}
@@ -51,7 +51,7 @@ export default function Header() {
               href="/"
               className="font-display text-2xl font-bold tracking-wider"
             >
-              <span className="text-white">ETHNIC</span>{" "}
+              <span className="text-[#1A1614]">ETHNIC</span>{" "}
               <span className="gold-gradient">PETAL</span>
             </Link>
 
@@ -61,7 +61,7 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="relative text-xs tracking-widest uppercase text-white/60 hover:text-white transition-colors group"
+                  className="relative text-xs tracking-widest uppercase text-[#1A1614]/70 hover:text-[#1A1614] transition-colors group"
                 >
                   {link.label}
                   <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-[#c9a84c] transition-all duration-300 group-hover:w-full" />
@@ -74,7 +74,7 @@ export default function Header() {
               <button
                 aria-label="Search"
                 onClick={() => setSearchOpen(true)}
-                className="text-white/60 hover:text-white transition-colors"
+                className="text-[#1A1614]/70 hover:text-[#1A1614] transition-colors"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -84,7 +84,7 @@ export default function Header() {
               <button
                 aria-label="Wishlist"
                 onClick={() => router.push("/wishlist")}
-                className="relative text-white/60 hover:text-white transition-colors"
+                className="relative text-[#1A1614]/70 hover:text-[#1A1614] transition-colors"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -99,7 +99,7 @@ export default function Header() {
               <button
                 aria-label="Cart"
                 onClick={() => setCartOpen(true)}
-                className="relative text-white/60 hover:text-white transition-colors"
+                className="relative text-[#1A1614]/70 hover:text-[#1A1614] transition-colors"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
@@ -116,12 +116,12 @@ export default function Header() {
 
         {/* Mobile Nav */}
         {menuOpen && (
-          <div className="lg:hidden border-t border-[#2a2a2a] bg-[#080808] px-4 py-4">
+          <div className="lg:hidden border-t border-[#D9D0C4] bg-[#FAF8F5] px-4 py-4">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="block py-2.5 text-sm tracking-widest uppercase text-white/60 hover:text-white transition-colors"
+                className="block py-2.5 text-sm tracking-widest uppercase text-[#1A1614]/70 hover:text-[#1A1614] transition-colors"
                 onClick={() => setMenuOpen(false)}
               >
                 {link.label}
